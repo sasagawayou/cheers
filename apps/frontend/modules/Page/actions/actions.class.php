@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Page actions.
+ *
+ * @package    symfonytestproject
+ * @subpackage Page
+ * @author     Your name here
+ * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
+ */
+class PageActions extends sfActions
+{
+/*   $page = PageTable:getInstance()->findOneBySlug('top');
+  $pageList = PageTable::getInstance()->find();
+  foreach ($pageList as $page) {
+  	;
+  } */
+
+  public function executeShow(sfWebRequest $request)
+  {
+  	$slug = $request->getParameter('slug');
+  	$this->page = PageTable::getInstance()->findOneBySlug($slug);
+  }
+}

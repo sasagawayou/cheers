@@ -1,0 +1,42 @@
+Page:
+  TopPage:
+    title:       トップページ
+    slug:        top
+    category:    ~
+    body:        トップページです。
+  ClassMateList:
+    title:       クラスメイト一覧
+    slug:        classmate
+    category:    ~
+    body:        クラスメイト一覧表示予定
+  VotePage:
+    title:       投票所
+    slug:        vote
+    category:    ~
+    body:        投票結果表示予定
+  TavernPage:
+    title:       お店紹介ページ
+    slug:        tavern
+    category:    ~
+    body:        お店情報表示予定
+  DistanceList:
+    title:       距離表示
+    slug:        Distance
+    category:    ~
+    body:        みんなとの距離と時間を表示予定
+  LinkPage:
+    title:       つながり
+    slug:        link
+    category:    ~
+    body:        mixiとかfacebookとかtwitterとかamabaとかgoogleplusとかのつながり作成予定
+  PersonalPage:
+    title:       個人ページ
+    slug:        personal
+    category:    classmate
+    body:        各個人のタイムライン表示予定
+    created_at:  '2011-11-25 05:55:55'
+  SettingPage:
+    title:       設定ページ
+    slug:        setting
+    category:    ~
+    body:        各種設定機能構築予定
