@@ -1,0 +1,16 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+#      dsn:      mysql:host=localhost;dbname=jimoto
+      dsn:      mysql:host=localhost;dbname=jimoto
+#      username: root
+#      password: sasagawa2501
+      username: jimoto_user
+      password: jimoto2501
+      attributes:
+        default_table_charset: utf8
+        default_table_collate: utf8_unicode_ci

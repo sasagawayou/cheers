@@ -1,0 +1,76 @@
+Page:
+  actAs:
+    Timestampable: ~
+    Sluggable: ~
+  columns:
+    title:
+      type:     string(100)
+      notnull:  true
+      default:  ''
+    body:
+      type:     clob
+      notnull:  true
+      default:  ''
+    category:
+      type:     string(32)
+      notnull:  true
+      default:  ''
+
+user:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    user_name:
+      type:     string(20)
+      notnull:  true
+      default:  ''
+    show_name:
+      type:     string(20)
+      notnull:  true
+      default:  ''
+    password:
+      type:     string(20)
+      notnull:  true
+      default:  ''
+    address: string(200)
+    email: varchar(100)
+    twitter: integer
+    mixi: integer
+    facebook: integer
+    google: integer
+    last_login: timestamp
+      
+Vote_ita:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    title:
+      type:     string(100)
+      notnull:  true
+      
+Vote_shop:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    ita_id:
+      type: integer
+      notnull:  true
+      default:  ''
+    url:    
+      type: string(255)
+      default:  ''
+    votes:
+      type: integer
+      default:  ''

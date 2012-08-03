@@ -1,0 +1,39 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+ 
+default:
+  url:   /:module/:action/*
+
+homepage:
+  url:   /
+  param: { module: Page, action: Show, slug: top }
+
+page_show:
+  url:   /page/:slug
+  param: { module: Page, action: Show }
+
+login:
+  url:   /login
+  param: { module: login, action: index }
+  
+vote_shop:
+  url:   /vote
+  param: { module: vote, action: index }
+
+setting:
+  url:   /stetting
+  param: { module: Page, action: Show }
+  
+personal:
+  url:   /personal
+  param: { module: Page, action: Show }
+  
+link:
+  url:   /personal
+  param: { module: Page, action: Show }
+
+distance:
+  url:   /personal
+  param: { module: Page, action: Show }
