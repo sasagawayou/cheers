@@ -2,9 +2,6 @@
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 # default rules
- 
-default:
-  url:   /:module/:action/*
 
 homepage:
   url:   /
@@ -37,3 +34,6 @@ link:
 distance:
   url:   /personal
   param: { module: Page, action: Show }
+  
+default:
+  url:   /:module/:action/*

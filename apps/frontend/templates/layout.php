@@ -9,7 +9,8 @@
   <?php include_javascripts() ?>
   
 </head>
-<body>
+
+ <body>
   <?php include_partial('login/login') ?>
 
 <header>
