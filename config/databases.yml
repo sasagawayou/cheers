@@ -6,7 +6,8 @@ all:
     class: sfDoctrineDatabase
     param:
 #      dsn:      mysql:host=localhost;dbname=jimoto
-      dsn:      mysql:host=mysqlsdb.co8hm2var4k9.eu-west-1.rds.amazonaws.com;dbname=dephx8n35mq
+      dsn:      mysql:host=127.0.0.1;dbname=dephx8n35mq
+#      dsn:      mysql:host=mysqlsdb.co8hm2var4k9.eu-west-1.rds.amazonaws.com;dbname=dephx8n35mq
 #      username: root
 #      password: sasagawa2501
       username: dephx8n35mq
