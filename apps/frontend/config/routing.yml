@@ -32,8 +32,8 @@ link:
   param: { module: Page, action: Show }
 
 distance:
-  url:   /personal
-  param: { module: Page, action: Show }
+  url:   /distance
+  param: { module: distance, action: index }
   
 default:
   url:   /:module/:action/*

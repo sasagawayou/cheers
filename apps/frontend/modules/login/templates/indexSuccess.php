@@ -17,16 +17,40 @@
     <!-- Beginning of generated code by <?php echo $form ?>
  -->
     <tr>
-      <th><label for="name">Name</label></th>
-      <td><input type="text" name="name" id="name" /></td>
+      <th><label for="user_name">user_name</label></th>
+      <td><input type="text" name="user_name" id="user_name" /></td>
     </tr>
     <tr>
-      <th><label for="email">Email</label></th>
+      <th><label for="show_name">show_name</label></th>
+      <td><input type="text" name="show_name" id="show_name" /></td>
+    </tr>
+    <tr>
+      <th><label for="password">password</label></th>
+      <td><input type="text" name="password" id="password" /></td>
+    </tr>
+    <tr>
+      <th><label for="address">address</label></th>
+      <td><input type="text" name="address" id="address" /></td>
+    </tr>
+    <tr>
+      <th><label for="email">email</label></th>
       <td><input type="text" name="email" id="email" /></td>
     </tr>
     <tr>
-      <th><label for="message">Message</label></th>
-      <td><textarea rows="4" cols="30" name="message" id="message"></textarea></td>
+      <th><label for="twitter">twitter</label></th>
+      <td><input type="text" name="twitter" id="twitter" /></td>
+    </tr>
+    <tr>
+      <th><label for="mixi">mixi</label></th>
+      <td><input type="text" name="mixi" id="mixi" /></td>
+    </tr>
+    <tr>
+      <th><label for="facebook">facebook</label></th>
+      <td><input type="text" name="facebook" id="facebook" /></td>
+    </tr>
+    <tr>
+      <th><label for="google">google</label></th>
+      <td><input type="text" name="google" id="google" /></td>
     </tr>
     <!-- End of generated code by <?php echo $form ?>
  -->

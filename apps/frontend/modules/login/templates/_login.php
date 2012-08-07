@@ -32,10 +32,12 @@
             <!-- Login Form -->
               <form class="clearfix"  action="<?php echo url_for('login/submit') ?>" method="POST">
               <h1>Member Login</h1>
-              <label class="grey" for="log">Username:</label>
-              <input class="field" type="text" name="log" id="log" value="" size="23" />
-              <label class="grey" for="pwd">Password:</label>
-              <input class="field" type="password" name="pwd" id="pwd" size="23" />
+              <label class="grey" for="user_name">user_name:</label>
+              <input class="field" type="text" name="user_name" id="user_name" value="" size="23" />
+              <label class="grey" for="show_name">show_name:</label>
+              <input class="field" type="text" name="show_name" id="show_name" value="" size="23" />
+              <label class="grey" for="password">password:</label>
+              <input class="field" type="password" name="password" id="pwd" size="23" />
               <label><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /> &nbsp;Remember me</label>
               <div class="clear"></div>
               <input type="submit" name="submit" value="Login" class="bt_login" />
