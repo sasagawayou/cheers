@@ -58,7 +58,7 @@ class voteActions extends sfActions {
 //      $id->delete();
 //      $id = "";
 //      return $id;
-    }
+//    }
 
   }
 
