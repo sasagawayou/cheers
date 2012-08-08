@@ -25,7 +25,7 @@ if ($_POST["vote"] and $_POST["id"]) {
 $ids = idGet();
 ?>
 
-<!DOCTYPE >
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
