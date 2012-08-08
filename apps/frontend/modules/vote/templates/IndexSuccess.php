@@ -53,7 +53,7 @@ $ids = idGet();
 <?php } ?> 
 
     <form method="get" action="">
-      <input type="text" value=""name="url"/>
+      <input type="text" value="" name="url"/>
       <br>
       <input type="submit" value="サムネイル表示" />
     </form>
