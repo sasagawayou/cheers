@@ -8,7 +8,7 @@ homepage:
   param: { module: Page, action: Show, slug: top }
 
 page_show:
-  url:   /page/:slug
+  url:   /page
   param: { module: Page, action: Show }
 
 login:
