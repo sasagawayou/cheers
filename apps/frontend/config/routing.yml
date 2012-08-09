@@ -15,10 +15,10 @@ login:
   url:   /login
   param: { module: login, action: index }
   
-vote_shop:
+vote:
   url:   /vote
   param: { module: vote, action: index }
-
+  
 setting:
   url:   /stetting
   param: { module: Page, action: Show }
