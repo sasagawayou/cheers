@@ -8,7 +8,7 @@ homepage:
   param: { module: Page, action: Show, slug: top }
 
 page_show:
-  url:   /page
+  url:   /page/:slug
   param: { module: Page, action: Show }
 
 login:
@@ -18,7 +18,7 @@ login:
 vote:
   url:   /vote
   param: { module: vote, action: index }
-  
+
 setting:
   url:   /stetting
   param: { module: Page, action: Show }
