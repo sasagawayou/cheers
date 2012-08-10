@@ -6,11 +6,12 @@ all:
     class: sfDoctrineDatabase
     param:
 #      dsn:      mysql:host=localhost;dbname=jimoto
-      dsn:      mysql:host=localhost;dbname=jimoto
+#      dsn:      mysql:host=127.0.0.1;dbname=dephx8n35mq
+      dsn:      mysql:host=mysqlsdb.co8hm2var4k9.eu-west-1.rds.amazonaws.com;port=3306;dbname=dephx8n35mq
 #      username: root
 #      password: sasagawa2501
-      username: jimoto_user
-      password: jimoto2501
+      username: dephx8n35mq
+      password: YtJxRSO0E&as
       attributes:
         default_table_charset: utf8
         default_table_collate: utf8_unicode_ci
