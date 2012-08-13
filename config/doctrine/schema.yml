@@ -16,7 +16,7 @@ Page:
       notnull:  true
       default:  ''
 
-user:
+Account:
   actAs:
     Timestampable: ~
   columns:
@@ -74,3 +74,39 @@ Vote_shop:
     votes:
       type: integer
       default:  ''
+      
+User:
+  actAs: { Timestampable: ~ }
+  tableName: users
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+    comment: 'ユーザー'
+  columns:
+    id:
+      type: integer(4)
+      unsigned: false
+      primary: true
+      autoincrement: true
+      comment: 'ID'
+    name:
+      type: string(255)
+      fixed: false
+      notnull: true
+      default: 'no name'
+      comment: 'ユーザー名'
+    image:
+      type: blob
+      notnull: false
+      comment: 'アイコン画像'
+    hybridauth_provider_name:
+      type: string(20)
+      fixed: false
+      notnull: true
+      comment: 'HybridAuthプロバイダ'
+    hybridauth_provider_uid:
+      type: string(255)
+      fixed: false
+      notnull: true
+      comment: 'HybridAuthプロバイダUID'

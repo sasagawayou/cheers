@@ -4,7 +4,7 @@ class loginActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->form = new UserForm();
+    $this->form = new AccountForm();
   }
   
   public function executeSubmit($request)

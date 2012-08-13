@@ -11,9 +11,9 @@ page_show:
   url:   /page/:slug
   param: { module: Page, action: Show }
 
-login:
-  url:   /login
-  param: { module: login, action: index }
+#login:
+#  url:   /login
+#  param: { module: login, action: index }
   
 vote:
   url:   /vote
@@ -34,6 +34,24 @@ link:
 distance:
   url:   /distance
   param: { module: distance, action: index }
+  
+login_endpoint:
+  url:   /login/endpoint
+  param: { module: auth, action: endPoint }
+  
+login:
+  url:   /login
+  param: { module: auth, action: index }
+
+logout:
+  url:   /logout
+  param: { module: auth, action: logout }
+
+login_provider:
+  url:   /login/:provider
+  param: { module: auth, action: slogin }
+  requirements:
+    provider: Facebook|Google|Twitter
   
 default:
   url:   /:module/:action/*

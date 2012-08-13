@@ -34,3 +34,8 @@ all:
 
     # Enable the database manager
     use_database:           true
+    
+  .actions:
+    login_module:    auth
+    login_action:    index
+    login_action:    slogin
