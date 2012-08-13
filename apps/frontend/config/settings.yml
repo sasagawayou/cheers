@@ -38,4 +38,4 @@ all:
   .actions:
     login_module:    auth
     login_action:    index
-#    login_action:    slogin
+    login_action:    slogin
