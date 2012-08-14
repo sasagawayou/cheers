@@ -25,7 +25,7 @@
       <li><a href="#">Example 1</a></li>
       <li><a href="#">Example 2</a></li>
       <li><a href="#">Example 3</a></li>
-      <?php echo link_to('logout', 'auth/logout')?>
+      <li><?php echo link_to('logout', 'auth/logout')?></li>
     </ul>
   </nav>
 
