@@ -1,11 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <?php include_http_metas() ?>
+  <?php include_metas() ?>
+  <?php include_title() ?>
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <?php include_stylesheets() ?>
+  <?php include_javascripts() ?>
+</head>
+<body>
 
 <?php 
-foreach ($rss->status as $i) {
-  $val = $i->text;
-  echo "<p>" . $val . "<br />";
-  echo "<a href=\"http://twitter.com/" . $i->user->screen_name . "/status/" . $i->id . "\">";
-  echo date("Y年m月d日H時i分", strtotime($i->created_at));
-  echo "</a>";
-  echo "</p>";
-}
+  $config = sfContext::getInstance()->getConfigCache()->checkConfig(sfConfig::get('sf_config_dir').'/hybrid_auth.yml');
+  $hybridauth = new Hybrid_Auth( $config );
+  $adapter = $hybridauth->authenticate( "Twitter" );
+  $user_timeline = $adapter->getUserActivity( "timeline" );
+  foreach( $user_timeline as $item ){
+    echo "<div align=\"left\">";
+    echo "<a href=\"" . $item->user->profileURL . "\"><img src=\"" . $item->user->photoURL . "\"></a>" . $item->user->displayName . ": " . $item->text . "<hr />";
+    echo "</div>";
+  }
 ?>
+  
+</body>
+</html>
+

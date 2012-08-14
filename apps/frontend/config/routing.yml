@@ -20,8 +20,8 @@ vote:
   param: { module: vote, action: index }
 
 setting:
-  url:   /stetting
-  param: { module: Page, action: Show }
+  url:   /setting
+  param: { module: setting, action: index }
   
 personal:
   url:   /personal

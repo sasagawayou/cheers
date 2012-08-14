@@ -73,13 +73,11 @@ class authActions extends sfActions
         return sfView::NONE;
     }
     
-    public function executeLogout(sfWebRequest $request) {
-//              $config = sfContext::getInstance()->getConfigCache()->checkConfig(sfConfig::get('sf_config_dir').'/hybrid_auth.yml');
-//        
-//            $hybridauth = new Hybrid_Auth($config);
-//            
-//            $adapter = $hybridauth->authenticate($request->getParameter('Twitter'));
-            $adapter->logout(); 
+    public function executeLogout() 
+    {
+    $this->getUser()->setAuthenticated(false);
+    $this->getUser()->shutdown();
+    $this->forward('auth', 'index');
     }
 
 }
