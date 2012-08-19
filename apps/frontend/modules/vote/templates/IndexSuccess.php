@@ -1,62 +1,33 @@
-<?php
-if ($_POST["id"] and !$_POST["vote"]) {
-  $id = $_POST["id"];
-  idUrlDelete($id);
-  $_POST = "";
-}
-if ($_GET) {
-  $val = $_GET["url"];
-  if (!empty($val)) {
-    insertUrl($val);
-  }
-  $val = "";
-  $_GET = "";
-}
-if ($_POST["vote"] and $_POST["id"]) {
-  $id = $_POST["id"];
-  $val = $_POST["vote"];
-  if (!empty($val)) {
-    insertVote($val , $id);
-  }
-  $id = "";
-  $val = "";
-  $_POST = "";
-}
-$ids = idGet();
-?>
-
 <!DOCTYPE html>
+<html>
   <head>
-  <?php include_http_metas() ?>
-  <?php include_metas() ?>
-  <?php include_title() ?>
-  <link rel="shortcut icon" href="/images/favicon.ico" />
-  <?php include_stylesheets() ?>
-  <?php include_javascripts() ?>
+    <?php include_http_metas() ?>
+    <?php include_metas() ?>
+    <?php include_title() ?>
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <?php include_stylesheets() ?>
+    <?php include_javascripts() ?>
   </head>
   <body>
 
     <?php
-    foreach ($ids as $id) {
-      $idrecord = getRecord($id);
-      $idurl = $idrecord->getUrl();
-      $idvote = $idrecord->getVotes();
-      echo "<h1><a href=" . $idurl . "/>" . getPageTitle("$idurl") . "</h1>";
-      echo "<img src=\"http://capture.heartrails.com/free?" . $idurl . "\"/></a>";
+    foreach ($vote_shops as $vote_shop) {
+      echo "<h1><a href=" . $vote_shop->getUrl() . "/>" . voteActions::getPageTitle($vote_shop->getUrl()) . "</h1>";
+      echo "<img src=\"http://capture.heartrails.com/free?" . $vote_shop->getUrl() . "\"/></a>";
       ?>
-      <form action="" method="POST">
-        <input type="hidden" name="id" value="<?php echo $id ?>">
-        <input type="submit" value="このレコードを削除">
+      <form action="/frontend_dev.php/vote/delete" method="post">
+        <input type="hidden" name="id" id="id" value="<?php echo $vote_shop->getId() ?>">
+        <input type="submit" value="削除">
       </form>
-      <form action="" method="POST">
-        <input type="hidden" name="vote" value="<?php echo $idvote + 1 ?>">
-        <input type="hidden" name="id" value="<?php echo $id ?>">
-        <input type="submit" value="投票<?php echo $idvote ?>" onclick="disabled = true;">
+      <form action="/frontend_dev.php/vote/votes" method="post">
+        <input type="hidden" name="vote" id="vote" value="<?php echo $vote_shop->getVotes() + 1 ?>">
+        <input type="hidden" name="id" id="id" value="<?php echo $vote_shop->getId() ?>">
+        <input type="submit" value="投票<?php echo $vote_shop->getVotes() ?>" onclick="disabled = true;">
       </form>
-<?php } ?> 
+    <?php } ?> 
 
-    <form method="get" action="">
-      <input type="text" value="" name="url"/>
+    <form method="post" action="/frontend_dev.php/vote/new">
+      <input  name="url" id="url" size="50" value=""/>
       <br>
       <input type="submit" value="サムネイル表示" />
     </form>

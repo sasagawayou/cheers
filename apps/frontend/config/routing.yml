@@ -5,11 +5,11 @@
 
 homepage:
   url:   /
-  param: { module: Page, action: Show, slug: top }
+  param: { module: Page, action: index, slug: top }
 
 page_show:
   url:   /page/:slug
-  param: { module: Page, action: Show }
+  param: { module: Page, action: index }
 
 #login:
 #  url:   /login
@@ -19,9 +19,25 @@ vote:
   url:   /vote
   param: { module: vote, action: index }
 
+vote_new:
+  url:   /vote/new
+  param: { module: vote, action: new }
+
+vote_votes:
+  url:   /vote/votes
+  param: { module: vote, action: votes }
+  
+vote_new:
+  url:   /vote/delete
+  param: { module: vote, action: delete }
+
 setting:
   url:   /setting
   param: { module: setting, action: index }
+  
+setting_edit:
+  url:   /setting/edit
+  param: { module: setting, action: edit }
   
 personal:
   url:   /personal

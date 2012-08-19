@@ -26,6 +26,8 @@ class authActions extends sfActions
                 $user = new User();
                 $user->set('name', $user_profile->displayName);
                 $user->set('image', file_get_contents($user_profile->photoURL));
+                $user->set('email', $user_profile->email);
+                $user->set('address', $user_profile->address);
                 $user->set('hybridauth_provider_name', $adapter->id);
                 $user->set('hybridauth_provider_uid', $user_profile->identifier);
                 $user->save();
@@ -35,6 +37,8 @@ class authActions extends sfActions
             $this->getUser()->setId($user->get('id'));
             $this->getUser()->setName($user->get('name'));
             $this->getUser()->setImage($user->get('image'));
+            $this->getUser()->setEmail($user->get('email'));
+            $this->getUser()->setAddress($user->get('address'));
             
             $this->redirect('@homepage');
             

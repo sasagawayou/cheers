@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.tabs {
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid #333;
+  border-bottom: none;
+  border-radius: 15px 10px 0 0;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.tab.current {
+  background: #90bfff;
+}
+
+.content {
+  display: none;
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  border: 1px solid #333;
+}
+
+#content1 {
+  display: block;
+}
+
+.content .inner {
+  padding: 20px;
+  font-size: 35px;
+}
