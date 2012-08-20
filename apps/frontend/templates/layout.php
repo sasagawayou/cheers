@@ -39,7 +39,7 @@
     <ul>
       <li><?php echo link_to('timeline', '/frontend_dev.php/page/top')?></li>
       <li><?php echo link_to('classmate', '/frontend_dev.php/page/classmate')?></li>
-      <li><?php echo link_to('vote', '/frontend_dev.php/vote')?></li>
+      <li><?php echo link_to('vote', '/frontend_dev.php/vote_ita')?></li>
       <li><?php echo link_to('tavern', '/frontend_dev.php/page/tavern')?></li>
       <li><?php echo link_to('distance', '/frontend_dev.php/distance')?></li>
       <li><?php echo link_to('link', '/frontend_dev.php/page/link')?></li>

@@ -1,12 +1,19 @@
 <?php
 
 class voteActions extends sfActions {
-
+  
   public function executeIndex(sfWebRequest $request) {
+//    
+//    global $ita_id;
+    static $ita_id;
+    $ita_id = $request->getParameter('ita_id');
 
-    $this->vote_shops = Doctrine::getTable('vote_shop')
-            ->createQuery('a')
-            ->execute();
+    
+    $this->vote_shops = Doctrine::getTable('vote_shop')->getTargetThreads($ita_id);
+//    $this->vote_shops = Doctrine::getTable('vote_shop')
+//            ->createQuery('a')
+//            ->execute();
+//    
 //    $this->ids = Vote_shopTable::getInstance()->findAll();
     
   }
@@ -15,9 +22,10 @@ class voteActions extends sfActions {
     
     $this->forward404Unless($request->isMethod('post'));
     $vote_shop = new Vote_shop();
+    $vote_shop->setItaId( $request->getParameter('ita_id'));
     $vote_shop->setUrl($request->getParameter('url'));
     $vote_shop->save();
-    $this->redirect('vote/index');     
+    $this->redirect('vote/index?ita_id='.$vote_shop->getItaId());     
     
   }
   
@@ -27,16 +35,16 @@ class voteActions extends sfActions {
     $vote_shop = Vote_shopTable::getInstance()->findOneBy("id", $request->getParameter('id'));
     $vote_shop->setVotes($request->getParameter('vote'));
     $vote_shop->save();
-    $this->redirect('vote/index');     
+    $this->redirect('vote/index?ita_id='.$vote_shop->getItaId());     
     
   }
   
   public function executeDelete(sfWebRequest $request) {
     
     $this->forward404Unless($request->isMethod('post'));
-    $id = Vote_shopTable::getInstance()->findOneBy('id', $request->getParameter('id'));
-    $id->delete();
-    $this->redirect('vote/index');     
+    $vote_shop = Vote_shopTable::getInstance()->findOneBy('id', $request->getParameter('id'));
+    $vote_shop->delete();
+    $this->redirect('vote/index?ita_id='.$vote_shop->getItaId());     
     
   }
 

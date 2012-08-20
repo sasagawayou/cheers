@@ -12,9 +12,6 @@
   </head>
   <body>
     <div class='tabs'>
-      <div class='tab current' id='tab1'>tab1</div>
-      <div class='tab' id='tab2'>tab2</div>
-      <div class='tab' id='tab3'>tab3</div>
     </div>
 
     <div class='content' id='content1'>
@@ -35,13 +32,11 @@
 
     <div class='content' id='content2'>
       <div class='inner'>
-        content2
       </div>
     </div>
 
     <div class='content' id='content3'>
       <div class='inner'>
-        content3
       </div>
     </div>
 

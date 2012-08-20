@@ -14,21 +14,37 @@ page_show:
 #login:
 #  url:   /login
 #  param: { module: login, action: index }
+
+vote_ita:
+  url:   /vote_ita
+  param: { module: vote_ita, action: index }
+
+vote_ita_new:
+  url:   /vote_ita/new
+  param: { module: vote_ita, action: new }
+
+vote_ita_edit:
+  url:   /vote_ita/edit
+  param: { module: vote_ita, action: edit }
+
+vote_ita_new:
+  url:   /vote_ita/delete
+  param: { module: vote, action: delete } 
   
-vote:
-  url:   /vote
+vote_shop:
+  url:   /vote_shop
   param: { module: vote, action: index }
 
-vote_new:
-  url:   /vote/new
+vote_shop_new:
+  url:   /vote_shop/new
   param: { module: vote, action: new }
 
-vote_votes:
-  url:   /vote/votes
+vote_shop_votes:
+  url:   /vote_shop/votes
   param: { module: vote, action: votes }
   
-vote_new:
-  url:   /vote/delete
+vote_shop_delete:
+  url:   /vote_shop/delete
   param: { module: vote, action: delete }
 
 setting:

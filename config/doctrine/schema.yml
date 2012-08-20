@@ -74,6 +74,16 @@ Vote_shop:
     votes:
       type: integer
       default:  ''
+  relations:
+    Vote_ita:
+      class: Vote_ita
+      foreignAlias: Vote_shop
+      foreignType: one
+      onDelete: CASCADE
+      type: one
+      local: ita_id
+      foreign: id
+      owningSide: true
       
 User:
   actAs: { Timestampable: ~ }

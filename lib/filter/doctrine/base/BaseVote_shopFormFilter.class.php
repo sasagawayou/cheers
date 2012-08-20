@@ -13,7 +13,7 @@ abstract class BaseVote_shopFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'ita_id'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'ita_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Vote_ita'), 'add_empty' => true)),
       'url'        => new sfWidgetFormFilterInput(),
       'votes'      => new sfWidgetFormFilterInput(),
       'created_at' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
@@ -21,7 +21,7 @@ abstract class BaseVote_shopFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'ita_id'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'ita_id'     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Vote_ita'), 'column' => 'id')),
       'url'        => new sfValidatorPass(array('required' => false)),
       'votes'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'created_at' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -46,7 +46,7 @@ abstract class BaseVote_shopFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'         => 'Number',
-      'ita_id'     => 'Number',
+      'ita_id'     => 'ForeignKey',
       'url'        => 'Text',
       'votes'      => 'Number',
       'created_at' => 'Date',
