@@ -18,5 +18,9 @@ class distanceActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
 
+    $user = UserTable::getInstance()->findOneBy("id", $request->getParameter('user_id'));
+    $this->address = $user->getAddress();
+    
   }
+
 }

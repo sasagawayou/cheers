@@ -3,19 +3,10 @@
 class voteActions extends sfActions {
   
   public function executeIndex(sfWebRequest $request) {
-//    
-//    global $ita_id;
-    static $ita_id;
-    $ita_id = $request->getParameter('ita_id');
 
-    
+    $ita_id = $request->getParameter('ita_id');  
     $this->vote_shops = Doctrine::getTable('vote_shop')->getTargetThreads($ita_id);
-//    $this->vote_shops = Doctrine::getTable('vote_shop')
-//            ->createQuery('a')
-//            ->execute();
-//    
-//    $this->ids = Vote_shopTable::getInstance()->findAll();
-    
+
   }
 
   public function executeNew(sfWebRequest $request) {

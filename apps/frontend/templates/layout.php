@@ -38,12 +38,11 @@
     <h1>Categories</h1>
     <ul>
       <li><?php echo link_to('timeline', '/frontend_dev.php/page/top')?></li>
-      <li><?php echo link_to('classmate', '/frontend_dev.php/page/classmate')?></li>
+      <li><?php echo link_to('classmate', '/frontend_dev.php/classmate')?></li>
       <li><?php echo link_to('vote', '/frontend_dev.php/vote_ita')?></li>
       <li><?php echo link_to('tavern', '/frontend_dev.php/page/tavern')?></li>
       <li><?php echo link_to('distance', '/frontend_dev.php/distance')?></li>
       <li><?php echo link_to('link', '/frontend_dev.php/page/link')?></li>
-      <li><?php echo link_to('personal', '/frontend_dev.php/page/personal')?></li>
       <li><?php echo link_to('setting', '/frontend_dev.php/setting')?></li>
     </ul>
   </aside>

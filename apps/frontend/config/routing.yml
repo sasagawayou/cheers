@@ -54,13 +54,17 @@ setting:
 setting_edit:
   url:   /setting/edit
   param: { module: setting, action: edit }
+
+classmate:
+  url:   /classmate
+  param: { module: classmate, action: index }
   
 personal:
   url:   /personal
-  param: { module: Page, action: Show }
+  param: { module: personal, action: index }
   
 link:
-  url:   /personal
+  url:   /link
   param: { module: Page, action: Show }
 
 distance:
