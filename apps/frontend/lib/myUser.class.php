@@ -39,27 +39,5 @@ class myUser extends sfBasicSecurityUser
     {
         return base64_encode($this->getImage());
     }
-    
-    public function setEmail($email)
-    {
-        $this->setAttribute('email', $email, self::ATTRIBUTE_NAMESPACE);
-    }
-
-    public function getEmail()
-    {
-        return $this->getAttribute('email', null, self::ATTRIBUTE_NAMESPACE);
-    }
-
-    public function setAddress($address)
-    {
-        $this->setAttribute('address', $address, self::ATTRIBUTE_NAMESPACE);
-    }
-
-    public function getAddress()
-    {
-        return $this->getAttribute('address', null, self::ATTRIBUTE_NAMESPACE);
-    }
-
-
 
 }

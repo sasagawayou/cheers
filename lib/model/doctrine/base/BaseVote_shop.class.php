@@ -9,18 +9,15 @@
  * @property integer $ita_id
  * @property string $url
  * @property integer $votes
- * @property Vote_ita $Vote_ita
  * 
- * @method integer   getId()       Returns the current record's "id" value
- * @method integer   getItaId()    Returns the current record's "ita_id" value
- * @method string    getUrl()      Returns the current record's "url" value
- * @method integer   getVotes()    Returns the current record's "votes" value
- * @method Vote_ita  getVoteIta()  Returns the current record's "Vote_ita" value
- * @method Vote_shop setId()       Sets the current record's "id" value
- * @method Vote_shop setItaId()    Sets the current record's "ita_id" value
- * @method Vote_shop setUrl()      Sets the current record's "url" value
- * @method Vote_shop setVotes()    Sets the current record's "votes" value
- * @method Vote_shop setVoteIta()  Sets the current record's "Vote_ita" value
+ * @method integer   getId()     Returns the current record's "id" value
+ * @method integer   getItaId()  Returns the current record's "ita_id" value
+ * @method string    getUrl()    Returns the current record's "url" value
+ * @method integer   getVotes()  Returns the current record's "votes" value
+ * @method Vote_shop setId()     Sets the current record's "id" value
+ * @method Vote_shop setItaId()  Sets the current record's "ita_id" value
+ * @method Vote_shop setUrl()    Sets the current record's "url" value
+ * @method Vote_shop setVotes()  Sets the current record's "votes" value
  * 
  * @package    connect
  * @subpackage model
@@ -56,12 +53,6 @@ abstract class BaseVote_shop extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Vote_ita', array(
-             'local' => 'ita_id',
-             'foreign' => 'id',
-             'onDelete' => 'CASCADE',
-             'owningSide' => true));
-
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }

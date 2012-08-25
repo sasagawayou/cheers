@@ -16,12 +16,4 @@ class Vote_shopTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Vote_shop');
     }
-    
-    public function getTargetThreads($ita_id) {
-    
-    $q = $this->createQuery('t')
-            ->where('t.ita_id = ?', $ita_id);
-    
-    return $q->execute();
-  }
 }

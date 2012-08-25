@@ -1,52 +1,63 @@
 <?php
 
 class voteActions extends sfActions {
-  
+
   public function executeIndex(sfWebRequest $request) {
 
-    $ita_id = $request->getParameter('ita_id');  
-    $this->vote_shops = Doctrine::getTable('vote_shop')->getTargetThreads($ita_id);
+    function getPageTitle($idurl) {
+ //     if (!enpty($idurl)){
+      $html = file_get_contents($idurl);
+      $html = mb_convert_encoding($html, mb_internal_encoding(), "auto");
+      if (preg_match("/<title>(.*?)<\/title>/i", $html, $matches)) {
+        return $matches[1];
+      } else {
+        return false;
+      }
+//        return false;
+//      }
+    }
 
-  }
+    function insertUrl($val) {
+      $vote_shop = new Vote_shop();
+      $vote_shop->setUrl($val);
+      $vote_shop->save();
+      return $val = "";
+    }
+    
+    function insertVote($val, $id) {
+      $vote_shop = Vote_shopTable::getInstance()->findOneBy("id","$id");
+      $vote_shop->setVotes($val);
+      $vote_shop->save();
+      return $val = "";
+    }
 
-  public function executeNew(sfWebRequest $request) {
-    
-    $this->forward404Unless($request->isMethod('post'));
-    $vote_shop = new Vote_shop();
-    $vote_shop->setItaId( $request->getParameter('ita_id'));
-    $vote_shop->setUrl($request->getParameter('url'));
-    $vote_shop->save();
-    $this->redirect('vote/index?ita_id='.$vote_shop->getItaId());     
-    
-  }
-  
-  public function executeVotes(sfWebRequest $request) {
-    
-    $this->forward404Unless($request->isMethod('post'));
-    $vote_shop = Vote_shopTable::getInstance()->findOneBy("id", $request->getParameter('id'));
-    $vote_shop->setVotes($request->getParameter('vote'));
-    $vote_shop->save();
-    $this->redirect('vote/index?ita_id='.$vote_shop->getItaId());     
-    
-  }
-  
-  public function executeDelete(sfWebRequest $request) {
-    
-    $this->forward404Unless($request->isMethod('post'));
-    $vote_shop = Vote_shopTable::getInstance()->findOneBy('id', $request->getParameter('id'));
-    $vote_shop->delete();
-    $this->redirect('vote/index?ita_id='.$vote_shop->getItaId());     
-    
-  }
+    function countGet() {
+      $count = Doctrine_Query::create()
+              ->from('Vote_shop v')
+              ->select('v.url');
+      $count = $count->count();
+      return $count;
+    }
 
-  static public function getPageTitle($idurl) {
-    //     if (!enpty($idurl)){
-    $html = file_get_contents($idurl);
-    $html = mb_convert_encoding($html, mb_internal_encoding(), "auto");
-    if (preg_match("/<title>(.*?)<\/title>/i", $html, $matches)) {
-      return $matches[1];
-    } else {
-      return false;
+    function idGet() {
+      $ids = Vote_shopTable::getInstance()->findAll();
+//     foreach ($ids as $id){
+//        $ids[] = $id->getId();
+//      }
+      return $ids;
+    }
+
+    function getRecord($id) {
+      $idurl = Vote_shopTable::getInstance()->findOneBy("id","$id");
+//      $idurl = $idurl->getUrl();
+      return $idurl;
+    }
+
+    function idUrlDelete($id) {
+      $id = Vote_shopTable::getInstance()->findOneBy('id', $id);
+      $id->delete();
+      $id = "";
+      return $id;
     }
 
   }

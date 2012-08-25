@@ -74,20 +74,10 @@ Vote_shop:
     votes:
       type: integer
       default:  ''
-  relations:
-    Vote_ita:
-      class: Vote_ita
-      foreignAlias: Vote_shop
-      foreignType: one
-      onDelete: CASCADE
-      type: one
-      local: ita_id
-      foreign: id
-      owningSide: true
       
 User:
   actAs: { Timestampable: ~ }
-#  tableName: users
+  tableName: users
   options:
     type: MyISAM
     collate: utf8_unicode_ci
@@ -110,13 +100,6 @@ User:
       type: blob
       notnull: false
       comment: 'アイコン画像'
-    address: string(200)
-    email: varchar(100)
-    twitter: integer
-    mixi: integer
-    facebook: integer
-    google: integer
-    last_login: timestamp
     hybridauth_provider_name:
       type: string(20)
       fixed: false

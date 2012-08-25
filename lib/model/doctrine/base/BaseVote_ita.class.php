@@ -7,14 +7,11 @@
  * 
  * @property integer $id
  * @property string $title
- * @property Vote_shop $Vote_shop
  * 
- * @method integer   getId()        Returns the current record's "id" value
- * @method string    getTitle()     Returns the current record's "title" value
- * @method Vote_shop getVoteShop()  Returns the current record's "Vote_shop" value
- * @method Vote_ita  setId()        Sets the current record's "id" value
- * @method Vote_ita  setTitle()     Sets the current record's "title" value
- * @method Vote_ita  setVoteShop()  Sets the current record's "Vote_shop" value
+ * @method integer  getId()    Returns the current record's "id" value
+ * @method string   getTitle() Returns the current record's "title" value
+ * @method Vote_ita setId()    Sets the current record's "id" value
+ * @method Vote_ita setTitle() Sets the current record's "title" value
  * 
  * @package    connect
  * @subpackage model
@@ -41,10 +38,6 @@ abstract class BaseVote_ita extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Vote_shop', array(
-             'local' => 'id',
-             'foreign' => 'ita_id'));
-
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }

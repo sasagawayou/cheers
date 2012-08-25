@@ -5,66 +5,30 @@
 
 homepage:
   url:   /
-  param: { module: Page, action: index, slug: top }
+  param: { module: Page, action: Show, slug: top }
 
 page_show:
   url:   /page/:slug
-  param: { module: Page, action: index }
+  param: { module: Page, action: Show }
 
 #login:
 #  url:   /login
 #  param: { module: login, action: index }
-
-vote_ita:
-  url:   /vote_ita
-  param: { module: vote_ita, action: index }
-
-vote_ita_new:
-  url:   /vote_ita/new
-  param: { module: vote_ita, action: new }
-
-vote_ita_edit:
-  url:   /vote_ita/edit
-  param: { module: vote_ita, action: edit }
-
-vote_ita_new:
-  url:   /vote_ita/delete
-  param: { module: vote, action: delete } 
   
-vote_shop:
-  url:   /vote_shop
+vote:
+  url:   /vote
   param: { module: vote, action: index }
 
-vote_shop_new:
-  url:   /vote_shop/new
-  param: { module: vote, action: new }
-
-vote_shop_votes:
-  url:   /vote_shop/votes
-  param: { module: vote, action: votes }
-  
-vote_shop_delete:
-  url:   /vote_shop/delete
-  param: { module: vote, action: delete }
-
 setting:
-  url:   /setting
-  param: { module: setting, action: index }
-  
-setting_edit:
-  url:   /setting/edit
-  param: { module: setting, action: edit }
-
-classmate:
-  url:   /classmate
-  param: { module: classmate, action: index }
+  url:   /stetting
+  param: { module: Page, action: Show }
   
 personal:
   url:   /personal
-  param: { module: personal, action: index }
+  param: { module: Page, action: Show }
   
 link:
-  url:   /link
+  url:   /personal
   param: { module: Page, action: Show }
 
 distance:
