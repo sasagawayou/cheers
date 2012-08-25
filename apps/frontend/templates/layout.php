@@ -21,7 +21,7 @@
   
   <nav>
     <ul>
-      <li><?php echo link_to('トップページ', 'page/index')?></li>
+      <li><?php echo link_to('トップページ', 'Page/Show')?></li>
       <li><a href="#">Example 1</a></li>
       <li><a href="#">Example 2</a></li>
       <li><a href="#">Example 3</a></li>
@@ -29,17 +29,20 @@
     </ul>
   </nav>
 
-  <a href="#" title="Ampersand Solutions homepage"> </a>
+  <a href="#" title="Ampersand Solutions homepage"><img src="logo.gif"
+    alt="Ampersand Solutions" /> </a>
 </header>
 
 <section>
   <aside>
     <h1>Categories</h1>
     <ul>
-      <li><?php echo link_to('timeline', '/frontend_dev.php/page')?></li>
+      <li><?php echo link_to('timeline', '/frontend_dev.php/page/top')?></li>
       <li><?php echo link_to('classmate', '/frontend_dev.php/classmate')?></li>
       <li><?php echo link_to('vote', '/frontend_dev.php/vote_ita')?></li>
+      <li><?php echo link_to('tavern', '/frontend_dev.php/page/tavern')?></li>
       <li><?php echo link_to('distance', '/frontend_dev.php/distance')?></li>
+      <li><?php echo link_to('link', '/frontend_dev.php/page/link')?></li>
       <li><?php echo link_to('setting', '/frontend_dev.php/setting')?></li>
     </ul>
   </aside>

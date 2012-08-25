@@ -16,18 +16,20 @@ abstract class BaseVote_shopForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
-      'ita_id'     => new sfWidgetFormInputText(),
+      'ita_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Vote_ita'), 'add_empty' => false)),
       'url'        => new sfWidgetFormInputText(),
-      'name'       => new sfWidgetFormInputText(),
-      'address'    => new sfWidgetFormInputText(),
+      'votes'      => new sfWidgetFormInputText(),
+      'created_at' => new sfWidgetFormDateTime(),
+      'updated_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'ita_id'     => new sfValidatorInteger(array('required' => false)),
+      'ita_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Vote_ita'), 'required' => false)),
       'url'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'name'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'address'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'votes'      => new sfValidatorInteger(array('required' => false)),
+      'created_at' => new sfValidatorDateTime(),
+      'updated_at' => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('vote_shop[%s]');

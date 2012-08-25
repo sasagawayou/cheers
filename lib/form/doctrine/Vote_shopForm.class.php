@@ -12,6 +12,5 @@ class Vote_shopForm extends BaseVote_shopForm
 {
   public function configure()
   {
-
   }
 }

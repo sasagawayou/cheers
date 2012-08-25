@@ -1,5 +1,5 @@
 <h1>Vote itas List</h1>
-<div align="center">
+
 <table>
   <thead>
     <tr>
@@ -16,6 +16,5 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-  </div>
 
   <a href="<?php echo url_for('vote_ita/new') ?>">New</a>

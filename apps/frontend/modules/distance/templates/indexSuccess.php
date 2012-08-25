@@ -10,7 +10,7 @@
 <!--    <script src="distance.js" type="text/javascript"></script>-->
 </head>
 <body>
-<?php foreach ($users as $user){?>
+
   <span id="origin">
     <?php echo $sf_user->getAddress(); ?>
   </span>
@@ -18,13 +18,12 @@
   >>
 
   <span id="destination">
-    <?php echo $user->getAddress(); ?>
+    <?php echo $address; ?>
   </span>
 
   <p id ="distance">距離 : </p>
   <p id ="duration">時間 : </p>
-<?php }?>
-  
+
   <div id="map_canvas" style="width:640px; height:480px;">
   </div>
 
