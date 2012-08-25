@@ -185,16 +185,16 @@ abstract class sfController
     // check for a module generator config file
     $this->context->getConfigCache()->import('modules/'.$moduleName.'/config/generator.yml', false, true);
 
-    if (!$this->actionExists($moduleName, $actionName))
-    {
-      // the requested action doesn't exist
-      if (sfConfig::get('sf_logging_enabled'))
-      {
-        $this->dispatcher->notify(new sfEvent($this, 'application.log', array(sprintf('Action "%s/%s" does not exist', $moduleName, $actionName))));
-      }
-
-      throw new sfError404Exception(sprintf('Action "%s/%s" does not exist.', $moduleName, $actionName));
-    }
+//    if (!$this->actionExists($moduleName, $actionName))
+//    {
+//      // the requested action doesn't exist
+//      if (sfConfig::get('sf_logging_enabled'))
+//      {
+//        $this->dispatcher->notify(new sfEvent($this, 'application.log', array(sprintf('Action "%s/%s" does not exist', $moduleName, $actionName))));
+//      }
+//
+//      throw new sfError404Exception(sprintf('Action "%s/%s" does not exist.', $moduleName, $actionName));
+//    }
 
     // create an instance of the action
     $actionInstance = $this->getAction($moduleName, $actionName);
