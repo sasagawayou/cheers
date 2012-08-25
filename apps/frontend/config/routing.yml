@@ -7,18 +7,6 @@ homepage:
   url:   /
   param: { module: page, action: index }
 
-page:
-  url:   /page
-  param: { module: page, action: index }
-
-#login:
-#  url:   /login
-#  param: { module: login, action: index }
-
-vote_ita:
-  url:   /vote_ita
-  param: { module: vote_ita, action: index }
-
 vote_ita_new:
   url:   /vote_ita/new
   param: { module: vote_ita, action: new }
@@ -30,50 +18,22 @@ vote_ita_edit:
 vote_ita_delete:
   url:   /vote_ita/delete
   param: { module: vote, action: delete } 
-  
-vote_shop:
-  url:   /vote_shop
-  param: { module: vote, action: index }
 
 vote_shop_new:
   url:   /vote_shop/new
   param: { module: vote, action: new }
 
 vote_shop_votes:
-  url:   /vote_shop/votes
+  url:   /vote/votes
   param: { module: vote, action: votes }
   
 vote_shop_delete:
-  url:   /vote_shop/delete
+  url:   /vote/delete
   param: { module: vote, action: delete }
 
-setting:
-  url:   /setting
-  param: { module: setting, action: index }
-  
 setting_edit:
   url:   /setting/edit
   param: { module: setting, action: edit }
-
-classmate:
-  url:   /classmate
-  param: { module: classmate, action: index }
-  
-personal:
-  url:   /personal
-  param: { module: personal, action: index }
-  
-link:
-  url:   /link
-  param: { module: Page, action: Show }
-
-distance:
-  url:   /distance
-  param: { module: distance, action: index }
-  
-tavern:
-  url:   /tavern
-  param: { module: tavern, action: index }
   
 login_endpoint:
   url:   /login/endpoint
@@ -95,3 +55,7 @@ login_provider:
   
 default:
   url:   /:module/:action/*
+  
+default:
+  url:   /:module/:action
+  param: {module: :module, action: index}
