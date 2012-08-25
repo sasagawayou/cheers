@@ -2,7 +2,7 @@
 
 class PageActions extends sfActions
 {
-  public function executeShow(sfWebRequest $request)
+  public function executeIndex(sfWebRequest $request)
   {
 //        $username = 't035117d';  
 //    $url = "http://twitter.com/statuses/user_timeline.xml?id=" . $username . "&count=100";  
