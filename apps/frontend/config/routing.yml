@@ -7,7 +7,7 @@ homepage:
   url:   /
   param: { module: page, action: index }
 
-page_show:
+page:
   url:   /page
   param: { module: page, action: index }
 
