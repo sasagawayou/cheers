@@ -1,5 +1,0 @@
-autoload:
-  hybridauth:
-    name:           hybridauth
-    path:           %SF_LIB_DIR%/vendor/hybridauth
-    recursive:      true
