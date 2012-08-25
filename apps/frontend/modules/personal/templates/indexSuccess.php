@@ -10,6 +10,8 @@
 <!--    <script src="distance.js" type="text/javascript"></script>-->
 </head>
 <body>
+  
+  <a href="<?php echo url_for('link/index?user_id='.$sf_params->get('user_id')) ?>">link</a>
 
   <span id="origin">
     <?php echo $sf_user->getAddress(); ?>

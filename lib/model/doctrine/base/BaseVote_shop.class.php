@@ -8,17 +8,23 @@
  * @property integer $id
  * @property integer $ita_id
  * @property string $url
+ * @property string $name
+ * @property string $address
  * @property integer $votes
  * @property Vote_ita $Vote_ita
  * 
  * @method integer   getId()       Returns the current record's "id" value
  * @method integer   getItaId()    Returns the current record's "ita_id" value
  * @method string    getUrl()      Returns the current record's "url" value
+ * @method string    getName()     Returns the current record's "name" value
+ * @method string    getAddress()  Returns the current record's "address" value
  * @method integer   getVotes()    Returns the current record's "votes" value
  * @method Vote_ita  getVoteIta()  Returns the current record's "Vote_ita" value
  * @method Vote_shop setId()       Sets the current record's "id" value
  * @method Vote_shop setItaId()    Sets the current record's "ita_id" value
  * @method Vote_shop setUrl()      Sets the current record's "url" value
+ * @method Vote_shop setName()     Sets the current record's "name" value
+ * @method Vote_shop setAddress()  Sets the current record's "address" value
  * @method Vote_shop setVotes()    Sets the current record's "votes" value
  * @method Vote_shop setVoteIta()  Sets the current record's "Vote_ita" value
  * 
@@ -43,6 +49,16 @@ abstract class BaseVote_shop extends sfDoctrineRecord
              'default' => '',
              ));
         $this->hasColumn('url', 'string', 255, array(
+             'type' => 'string',
+             'default' => '',
+             'length' => 255,
+             ));
+        $this->hasColumn('name', 'string', 255, array(
+             'type' => 'string',
+             'default' => '',
+             'length' => 255,
+             ));
+        $this->hasColumn('address', 'string', 255, array(
              'type' => 'string',
              'default' => '',
              'length' => 255,

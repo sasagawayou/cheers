@@ -5,11 +5,11 @@
 
 homepage:
   url:   /
-  param: { module: Page, action: index, slug: top }
+  param: { module: page, action: index }
 
 page_show:
-  url:   /page/:slug
-  param: { module: Page, action: index }
+  url:   /page
+  param: { module: page, action: index }
 
 #login:
 #  url:   /login
@@ -27,7 +27,7 @@ vote_ita_edit:
   url:   /vote_ita/edit
   param: { module: vote_ita, action: edit }
 
-vote_ita_new:
+vote_ita_delete:
   url:   /vote_ita/delete
   param: { module: vote, action: delete } 
   
@@ -70,6 +70,10 @@ link:
 distance:
   url:   /distance
   param: { module: distance, action: index }
+  
+tavern:
+  url:   /tavern
+  param: { module: tavern, action: index }
   
 login_endpoint:
   url:   /login/endpoint

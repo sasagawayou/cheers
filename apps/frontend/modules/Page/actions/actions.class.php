@@ -12,7 +12,7 @@ class PageActions extends sfActions
   $config = sfContext::getInstance()->getConfigCache()->checkConfig(sfConfig::get('sf_config_dir').'/hybrid_auth.yml');
   $hybridauth = new Hybrid_Auth( $config );
   $adapter = $hybridauth->authenticate( "Twitter" );
-  $user_timeline = $adapter->getUserActivity( "timeline" );
+  $this->user_timeline = $adapter->getUserActivity( "timeline" );
   
 
   }

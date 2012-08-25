@@ -7,14 +7,20 @@
  * 
  * @property integer $id
  * @property string $title
+ * @property string $description
  * @property Vote_shop $Vote_shop
+ * @property Vote_comment $Vote_comment
  * 
- * @method integer   getId()        Returns the current record's "id" value
- * @method string    getTitle()     Returns the current record's "title" value
- * @method Vote_shop getVoteShop()  Returns the current record's "Vote_shop" value
- * @method Vote_ita  setId()        Sets the current record's "id" value
- * @method Vote_ita  setTitle()     Sets the current record's "title" value
- * @method Vote_ita  setVoteShop()  Sets the current record's "Vote_shop" value
+ * @method integer      getId()           Returns the current record's "id" value
+ * @method string       getTitle()        Returns the current record's "title" value
+ * @method string       getDescription()  Returns the current record's "description" value
+ * @method Vote_shop    getVoteShop()     Returns the current record's "Vote_shop" value
+ * @method Vote_comment getVoteComment()  Returns the current record's "Vote_comment" value
+ * @method Vote_ita     setId()           Sets the current record's "id" value
+ * @method Vote_ita     setTitle()        Sets the current record's "title" value
+ * @method Vote_ita     setDescription()  Sets the current record's "description" value
+ * @method Vote_ita     setVoteShop()     Sets the current record's "Vote_shop" value
+ * @method Vote_ita     setVoteComment()  Sets the current record's "Vote_comment" value
  * 
  * @package    connect
  * @subpackage model
@@ -36,12 +42,20 @@ abstract class BaseVote_ita extends sfDoctrineRecord
              'notnull' => true,
              'length' => 100,
              ));
+        $this->hasColumn('description', 'string', 500, array(
+             'type' => 'string',
+             'length' => 500,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
         $this->hasOne('Vote_shop', array(
+             'local' => 'id',
+             'foreign' => 'ita_id'));
+
+        $this->hasOne('Vote_comment', array(
              'local' => 'id',
              'foreign' => 'ita_id'));
 
