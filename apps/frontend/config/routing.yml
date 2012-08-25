@@ -5,11 +5,11 @@
 
 homepage:
   url:   /
-  param: { module: page, action: index }
+  param: { module: page, action: show }
 
 page:
   url:   /page
-  param: { module: page, action: index }
+  param: { module: page, action: show }
 
 #login:
 #  url:   /login
