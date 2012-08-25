@@ -8,19 +8,40 @@
  * @property integer $id
  * @property string $name
  * @property blob $image
+ * @property string $address
+ * @property varchar $email
+ * @property integer $twitter
+ * @property integer $mixi
+ * @property integer $facebook
+ * @property integer $google
+ * @property timestamp $last_login
  * @property string $hybridauth_provider_name
  * @property string $hybridauth_provider_uid
  * 
- * @method integer getId()                       Returns the current record's "id" value
- * @method string  getName()                     Returns the current record's "name" value
- * @method blob    getImage()                    Returns the current record's "image" value
- * @method string  getHybridauthProviderName()   Returns the current record's "hybridauth_provider_name" value
- * @method string  getHybridauthProviderUid()    Returns the current record's "hybridauth_provider_uid" value
- * @method User    setId()                       Sets the current record's "id" value
- * @method User    setName()                     Sets the current record's "name" value
- * @method User    setImage()                    Sets the current record's "image" value
- * @method User    setHybridauthProviderName()   Sets the current record's "hybridauth_provider_name" value
- * @method User    setHybridauthProviderUid()    Sets the current record's "hybridauth_provider_uid" value
+ * @method integer   getId()                       Returns the current record's "id" value
+ * @method string    getName()                     Returns the current record's "name" value
+ * @method blob      getImage()                    Returns the current record's "image" value
+ * @method string    getAddress()                  Returns the current record's "address" value
+ * @method varchar   getEmail()                    Returns the current record's "email" value
+ * @method integer   getTwitter()                  Returns the current record's "twitter" value
+ * @method integer   getMixi()                     Returns the current record's "mixi" value
+ * @method integer   getFacebook()                 Returns the current record's "facebook" value
+ * @method integer   getGoogle()                   Returns the current record's "google" value
+ * @method timestamp getLastLogin()                Returns the current record's "last_login" value
+ * @method string    getHybridauthProviderName()   Returns the current record's "hybridauth_provider_name" value
+ * @method string    getHybridauthProviderUid()    Returns the current record's "hybridauth_provider_uid" value
+ * @method User      setId()                       Sets the current record's "id" value
+ * @method User      setName()                     Sets the current record's "name" value
+ * @method User      setImage()                    Sets the current record's "image" value
+ * @method User      setAddress()                  Sets the current record's "address" value
+ * @method User      setEmail()                    Sets the current record's "email" value
+ * @method User      setTwitter()                  Sets the current record's "twitter" value
+ * @method User      setMixi()                     Sets the current record's "mixi" value
+ * @method User      setFacebook()                 Sets the current record's "facebook" value
+ * @method User      setGoogle()                   Sets the current record's "google" value
+ * @method User      setLastLogin()                Sets the current record's "last_login" value
+ * @method User      setHybridauthProviderName()   Sets the current record's "hybridauth_provider_name" value
+ * @method User      setHybridauthProviderUid()    Sets the current record's "hybridauth_provider_uid" value
  * 
  * @package    connect
  * @subpackage model
@@ -31,7 +52,7 @@ abstract class BaseUser extends sfDoctrineRecord
 {
     public function setTableDefinition()
     {
-        $this->setTableName('users');
+        $this->setTableName('user');
         $this->hasColumn('id', 'integer', 4, array(
              'type' => 'integer',
              'unsigned' => false,
@@ -52,6 +73,29 @@ abstract class BaseUser extends sfDoctrineRecord
              'type' => 'blob',
              'notnull' => false,
              'comment' => 'アイコン画像',
+             ));
+        $this->hasColumn('address', 'string', 200, array(
+             'type' => 'string',
+             'length' => 200,
+             ));
+        $this->hasColumn('email', 'varchar', 100, array(
+             'type' => 'varchar',
+             'length' => 100,
+             ));
+        $this->hasColumn('twitter', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('mixi', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('facebook', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('google', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('last_login', 'timestamp', null, array(
+             'type' => 'timestamp',
              ));
         $this->hasColumn('hybridauth_provider_name', 'string', 20, array(
              'type' => 'string',

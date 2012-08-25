@@ -18,5 +18,9 @@ class distanceActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
 
+        $this->users = Doctrine_Core::getTable('user')
+            ->createQuery('a')
+            ->execute();
   }
+
 }

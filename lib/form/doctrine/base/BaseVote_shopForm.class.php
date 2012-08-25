@@ -18,18 +18,16 @@ abstract class BaseVote_shopForm extends BaseFormDoctrine
       'id'         => new sfWidgetFormInputHidden(),
       'ita_id'     => new sfWidgetFormInputText(),
       'url'        => new sfWidgetFormInputText(),
-      'votes'      => new sfWidgetFormInputText(),
-      'created_at' => new sfWidgetFormDateTime(),
-      'updated_at' => new sfWidgetFormDateTime(),
+      'name'       => new sfWidgetFormInputText(),
+      'address'    => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'ita_id'     => new sfValidatorInteger(array('required' => false)),
       'url'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'votes'      => new sfValidatorInteger(array('required' => false)),
-      'created_at' => new sfValidatorDateTime(),
-      'updated_at' => new sfValidatorDateTime(),
+      'name'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'address'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('vote_shop[%s]');
