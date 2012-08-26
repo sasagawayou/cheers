@@ -1,5 +1,5 @@
 all:
-  base_url: http://127.0.0.1/frontend_dev.php/login/endpoint
+  base_url: http://nomou.cloudcontrolled.com/frontend_dev.php/login/endpoint
   providers:
     OpenID:
       enabled: true
