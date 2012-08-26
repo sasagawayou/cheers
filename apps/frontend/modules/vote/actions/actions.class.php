@@ -63,7 +63,7 @@ class voteActions extends sfActions {
   static public function getPageTitle($idurl) {
     //     if (!enpty($idurl)){
     $html = file_get_contents($idurl);
-    $html = mb_convert_encoding($html, mb_internal_encoding(), "utf8");
+    $html = mb_convert_encoding($html, mb_internal_encoding(), "UTF-8,Shift-JIS,EUC-JP");
     if (preg_match("/<title>(.*?)<\/title>/i", $html, $matches)) {
       return $matches[1];
     } else {
