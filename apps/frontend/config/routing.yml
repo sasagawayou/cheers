@@ -1,0 +1,61 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+
+homepage:
+  url:   /
+  param: { module: page, action: index }
+
+vote_ita_new:
+  url:   /vote_ita/new
+  param: { module: vote_ita, action: new }
+
+vote_ita_edit:
+  url:   /vote_ita/edit
+  param: { module: vote_ita, action: edit }
+
+vote_ita_delete:
+  url:   /vote_ita/delete
+  param: { module: vote, action: delete } 
+
+vote_shop_new:
+  url:   /vote_shop/new
+  param: { module: vote, action: new }
+
+vote_shop_votes:
+  url:   /vote/votes
+  param: { module: vote, action: votes }
+  
+vote_shop_delete:
+  url:   /vote/delete
+  param: { module: vote, action: delete }
+
+setting_edit:
+  url:   /setting/edit
+  param: { module: setting, action: edit }
+  
+login_endpoint:
+  url:   /login/endpoint
+  param: { module: auth, action: endPoint }
+  
+login:
+  url:   /login
+  param: { module: auth, action: index }
+
+logout:
+  url:   /logout
+  param: { module: auth, action: logout }
+
+login_provider:
+  url:   /login/:provider
+  param: { module: auth, action: slogin }
+  requirements:
+    provider: Facebook|Google|Twitter
+  
+default:
+  url:   /:module/:action/*
+  
+default:
+  url:   /:module/:action
+  param: {module: :module, action: index}

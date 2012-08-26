@@ -1,0 +1,2 @@
+config/hybrid_auth.yml:
+  class: sfEnvironmentYamlConfigHandler

@@ -1,0 +1,19 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        CONNECT
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [slide.css, main.css]
+  javascripts:    [slide.js, jquery-1.3.2.min.js, distance.js]
+  has_layout:     true
+  layout:         layout
+
