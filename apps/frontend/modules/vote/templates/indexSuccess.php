@@ -9,6 +9,7 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <?php phpinfo() ?>
     <div align="center">
       <table>
         <tr>
