@@ -9,7 +9,11 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <?php phpinfo() ?>
+    <?php  ini_set('default_charset', 'UTF-8');
+ini_set('mbstring.http_input', 'auto');
+ini_set('mbstring.http_output', 'UTF-8');
+ini_set('mbstring.internal_encoding', 'UTF-8');
+?>?>
     <div align="center">
       <table>
         <tr>
