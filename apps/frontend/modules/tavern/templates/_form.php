@@ -10,7 +10,7 @@
       <tr>
         <td colspan="2">
           <?php echo $form->renderHiddenFields(false) ?>
-          &nbsp;<?php echo link_to('Back to list', 'vote/index?id=' . $sf_params->get('ita_id')) ?>
+          &nbsp;
           <?php if (!$form->getObject()->isNew()): ?>
             &nbsp;<?php echo link_to('Delete', 'tavern/delete?id=' . $form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
           <?php endif; ?>
@@ -23,7 +23,12 @@
       <tr>
         <td>
           <?php echo $form['ita_id']->renderError() ?>
-          <?php echo $form['ita_id']->render(array('type' => 'hidden','value' => $sf_params->get('ita_id'))) ?>
+          <?php if($sf_params->get('ita_id')){
+            echo $form['ita_id']->render(array('type' => 'hidden','value' => $sf_params->get('ita_id')));
+          }else{
+            echo $form['ita_id']->render(array('type' => 'hidden','value' => $form->getObject()->getItaId()));
+          }
+           ?>
         </td>
       </tr>
       <tr>

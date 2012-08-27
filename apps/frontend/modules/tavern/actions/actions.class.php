@@ -54,7 +54,7 @@ class tavernActions extends sfActions {
     $this->forward404Unless($vote_shop = Doctrine_Core::getTable('vote_shop')->find(array($request->getParameter('id'))), sprintf('Object vote_shop does not exist (%s).', $request->getParameter('id')));
     $vote_shop->delete();
 
-    $this->redirect('tavern/index');
+    $this->redirect('vote/index?ita_id=' . $form->getObject()->getItaId());
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form) {
@@ -62,7 +62,7 @@ class tavernActions extends sfActions {
     if ($form->isValid()) {
       $vote_shop = $form->save();
 
-      $this->redirect('tavern/edit?id=' . $vote_shop->getId());
+      $this->redirect('vote/index?ita_id=' . $form->getObject()->getItaId());
     }
   }
 

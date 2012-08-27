@@ -21,7 +21,7 @@
   
   <nav>
     <ul>
-      <li><?php echo link_to('トップページ', 'page/index')?></li>
+      <li><?php echo link_to('トップページ', '/frontend_dev.php/page')?></li>
       <li><a href="#">Example 1</a></li>
       <li><a href="#">Example 2</a></li>
       <li><a href="#">Example 3</a></li>

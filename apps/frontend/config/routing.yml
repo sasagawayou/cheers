@@ -3,7 +3,7 @@
 
 # default rules
 
-homepage:
+page:
   url:   /
   param: { module: page, action: index }
 
