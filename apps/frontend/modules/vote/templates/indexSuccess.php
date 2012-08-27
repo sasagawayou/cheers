@@ -9,33 +9,34 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <?php  ini_set('default_charset', 'UTF-8');
-ini_set('mbstring.http_input', 'auto');
-ini_set('mbstring.http_output', 'UTF-8');
-ini_set('mbstring.internal_encoding', 'UTF-8');
-?>?>
+    <?php
+    ini_set('default_charset', 'UTF-8');
+    ini_set('mbstring.http_input', 'auto');
+    ini_set('mbstring.http_output', 'UTF-8');
+    ini_set('mbstring.internal_encoding', 'UTF-8');
+    ?>
     <div align="center">
       <table>
         <tr>
           <?php $i = 1;
           foreach ($vote_shops as $vote_shop) { ?>
             <td>
-              <?php if ($vote_shop->getUrl()){ ?>
-              
-              <a href="<?php echo $vote_shop->getUrl() ?>"><h1><?php echo voteActions::getPageTitle($vote_shop->getUrl()) ?></h1></a>
-              <a href="<?php echo url_for('tavern/edit?id=' . $vote_shop->getId()) ?>">
-              <?php echo "<img src=\"http://capture.heartrails.com/free?" . $vote_shop->getUrl() . "\"/></a>"; ?></a>
+  <?php if ($vote_shop->getUrl()) { ?>
 
-              <form action="/frontend_dev.php/vote/delete" method="post">
-                <input type="hidden" name="id" id="id" value="<?php echo $vote_shop->getId() ?>">
-                <input type="submit" value="削除">
-              </form>
-              <form action="/frontend_dev.php/vote/votes" method="post">
-                <input type="hidden" name="vote" id="vote" value="<?php echo $vote_shop->getVotes() + 1 ?>">
-                <input type="hidden" name="id" id="id" value="<?php echo $vote_shop->getId() ?>">
-                <input type="submit" value="投票<?php echo $vote_shop->getVotes() ?>" >
-              </form></td>
-              <?php } ?>
+                <a href="<?php echo $vote_shop->getUrl() ?>"><h1><?php echo voteActions::getPageTitle($vote_shop->getUrl()) ?></h1></a>
+                <a href="<?php echo url_for('tavern/edit?id=' . $vote_shop->getId()) ?>">
+    <?php echo "<img src=\"http://capture.heartrails.com/free?" . $vote_shop->getUrl() . "\"/></a>"; ?></a>
+
+                <form action="/frontend_dev.php/vote/delete" method="post">
+                  <input type="hidden" name="id" id="id" value="<?php echo $vote_shop->getId() ?>">
+                  <input type="submit" value="削除">
+                </form>
+                <form action="/frontend_dev.php/vote/votes" method="post">
+                  <input type="hidden" name="vote" id="vote" value="<?php echo $vote_shop->getVotes() + 1 ?>">
+                  <input type="hidden" name="id" id="id" value="<?php echo $vote_shop->getId() ?>">
+                  <input type="submit" value="投票<?php echo $vote_shop->getVotes() ?>" >
+                </form></td>
+            <?php } ?>
 
             <?php
             if ($i == 3) {
@@ -48,7 +49,7 @@ ini_set('mbstring.internal_encoding', 'UTF-8');
       </table>
 
       <a href="<?php echo url_for('tavern/new?ita_id=' . $sf_params->get('ita_id')) ?>">New</a>
-        <article><?php echo nl2br($description); ?></article>
+      <article><?php echo nl2br($description); ?></article>
     </div>
 
     <?php foreach ($vote_comments as $vote_comment) {
