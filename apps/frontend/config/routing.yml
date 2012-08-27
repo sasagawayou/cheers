@@ -5,7 +5,7 @@
 
 page:
   url:   /
-  param: { module: page, action: index }
+  param: { module: vote_ita, action: index }
 
 vote_ita_new:
   url:   /vote_ita/new
@@ -56,6 +56,10 @@ login_provider:
 default:
   url:   /:module/:action/*
   
+default:
+  url:   /:module
+  param: {module: :module, action: index}
+
 default:
   url:   /:module/:action
   param: {module: :module, action: index}
