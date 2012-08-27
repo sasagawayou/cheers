@@ -7,11 +7,11 @@ all:
     param:
 #      dsn:      mysql:host=localhost;dbname=jimoto
 #      dsn:      mysql:host=127.0.0.1;dbname=dephx8n35mq
-      dsn:      mysql:host=mysqlsdb.co8hm2var4k9.eu-west-1.rds.amazonaws.com;port=3306;dbname=depx594q53e
+      dsn:      mysql:host=mysqlsdb.co8hm2var4k9.eu-west-1.rds.amazonaws.com;port=3306;dbname=depgr9344xe
 #      username: root
 #      password: sasagawa2501
-      username: depx594q53e
-      password: r5KAPghtR+jm
+      username: depgr9344xe
+      password: hUQG76QCpsXH
       attributes:
         default_table_charset: utf8
         default_table_collate: utf8_unicode_ci
