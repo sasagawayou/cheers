@@ -2,6 +2,7 @@ var directionDisplay;
 var directionsService;
 var geocoder;
 var map;
+var dst
 
 var origin;
 var destination;
@@ -34,10 +35,14 @@ function initialize() {
 
 function calculateDistances() {
   var service = new google.maps.DistanceMatrixService();
+  var arr = [document.getElementById('destination').innerText];
+    for (var i = 0, l = arr.length; i < l; i++) {
+    dst += '"' + arr[i] + '",';
+  }
   service.getDistanceMatrix(
   {
     origins: [document.getElementById('origin').innerText],
-    destinations: [document.getElementById('destinations').innerText],
+    destinations: [dst],
     travelMode: google.maps.TravelMode.DRIVING,
     unitSystem: google.maps.UnitSystem.METRIC,
     avoidHighways: false,

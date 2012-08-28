@@ -17,7 +17,7 @@
       <?php echo $sf_user->getAddress(); ?>
     </span>
     <?php foreach ($users as $user) { ?>
-      <span id="destinations">
+      <span id="destination">
         <?php echo $user->getAddress(); ?>
       </span>
     <?php } ?>
