@@ -18,7 +18,7 @@
     </span>
     <?php
     foreach ($users as $user) {
-      if (!$sf_user->getId() == $user->getId()) {
+      if ($sf_user->getId() != $user->getId()) {
         $arr[] = $user->getAddress();
       }
     }
