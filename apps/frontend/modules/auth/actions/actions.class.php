@@ -40,7 +40,7 @@ class authActions extends sfActions
             $this->getUser()->setEmail($user->get('email'));
             $this->getUser()->setAddress($user->get('address'));
             
-            $this->redirect('page/index');
+            $this->redirect('vote_ita/index');
             
         }
         catch( Exception $e ){  

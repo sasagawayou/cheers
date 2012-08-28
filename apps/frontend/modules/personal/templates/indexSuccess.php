@@ -6,6 +6,7 @@
   <?php include_title() ?>
   <link rel="shortcut icon" href="/images/favicon.ico" />
   <?php include_stylesheets() ?>
+  <?php use_javascript('distance.js') ?>
   <?php include_javascripts() ?>
 <!--    <script src="distance.js" type="text/javascript"></script>-->
 </head>

@@ -21,24 +21,23 @@
   
   <nav>
     <ul>
-      <li><?php echo link_to('トップページ', '/frontend_dev.php/page')?></li>
+      <li><?php echo link_to('トップページ', '/frontend_dev.php/vote_ita')?></li>
       <li><a href="#">Example 1</a></li>
       <li><a href="#">Example 2</a></li>
       <li><a href="#">Example 3</a></li>
-      <li><?php echo link_to('logout', 'auth/logout')?></li>
+      <?php echo link_to('logout', 'auth/logout')?>
     </ul>
   </nav>
 
-  <a href="#" title="Ampersand Solutions homepage"> </a>
+  <a href="#" title="Cheers!!!!!!!!!!"> </a>
 </header>
 
 <section>
   <aside>
     <h1>Categories</h1>
     <ul>
-      <li><?php echo link_to('timeline', '/frontend_dev.php/page')?></li>
-      <li><?php echo link_to('classmate', '/frontend_dev.php/classmate')?></li>
       <li><?php echo link_to('vote', '/frontend_dev.php/vote_ita')?></li>
+      <li><?php echo link_to('classmate', '/frontend_dev.php/classmate')?></li>
       <li><?php echo link_to('distance', '/frontend_dev.php/distance')?></li>
       <li><?php echo link_to('setting', '/frontend_dev.php/setting')?></li>
     </ul>
