@@ -18,12 +18,14 @@
     </span>
     <?php foreach ($users as $user) {
       $arr[] = $user->getAddress();
-    }      $dst = "";
-    for ($i = 0; $i < count($arr); $i++) {
-
-      $dst .= '"' . $arr[$i] . '",';
-    }
-    $dst = rtrim($dst, ",");
+      }
+//          $dst = "";
+////    for ($i = 0; $i < count($arr); $i++) {
+//
+//      $dst .= '"' . $arr[$i] . '",';
+//    }
+//    $dst = rtrim($dst, ",");
+    $dst = join(',', $arr);
  
     ?>
     <span id="destination">
