@@ -39,10 +39,11 @@ function calculateDistances() {
 //    for (var i = 0, l = arr.length; i < l; i++) {
 //    dst += '"' + arr[i] + '",';
 //  }
+  dst = document.getElementById('destination').innerText;
   service.getDistanceMatrix(
   {
     origins: [document.getElementById('origin').innerText],
-    destinations: [document.getElementById('destination').innerText],
+    destinations: [dst],
     travelMode: google.maps.TravelMode.DRIVING,
     unitSystem: google.maps.UnitSystem.METRIC,
     avoidHighways: false,
