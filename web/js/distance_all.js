@@ -43,7 +43,7 @@ function calculateDistances() {
   service.getDistanceMatrix(
   {
     origins: [document.getElementById('origin').innerText],
-    destinations: [dst],
+    destinations: [alert(dst)],
     travelMode: google.maps.TravelMode.DRIVING,
     unitSystem: google.maps.UnitSystem.METRIC,
     avoidHighways: false,
