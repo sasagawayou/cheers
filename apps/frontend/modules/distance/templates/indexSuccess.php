@@ -16,13 +16,15 @@
     <span id="origin">
       <?php echo $sf_user->getAddress(); ?>
     </span>
-    <?php foreach ($users as $user) { ?>
-      <?php
+    <?php foreach ($users as $user) {
       $arr[] = $user->getAddress();
-    }
+    }      $dst = "";
     for ($i = 0; $i < count($arr); $i++) {
-      $dst = '"' + $arr[$i] + '",';
+
+      $dst .= '"' . $arr[$i] . '",';
     }
+    $dst = rtrim($dst, ",");
+ 
     ?>
     <span id="destination">
       <?php echo $dst; ?>
