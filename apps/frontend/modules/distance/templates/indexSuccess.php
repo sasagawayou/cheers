@@ -17,10 +17,16 @@
       <?php echo $sf_user->getAddress(); ?>
     </span>
     <?php foreach ($users as $user) { ?>
-      <span id="destination">
-        <?php echo $user->getAddress(); ?>
-      </span>
-    <?php } ?>
+      <?php
+      $arr[] = $user->getAddress();
+    }
+    for ($i = 0; $i < count($arr); $i++) {
+      $dst = '"' + $arr[$i] + '",';
+    }
+    ?>
+    <span id="destination">
+      <?php echo $dst; ?>
+    </span>
     <div id="header" style="width:100%; height:200px;">
       <span id="result"></span>
     </div>
