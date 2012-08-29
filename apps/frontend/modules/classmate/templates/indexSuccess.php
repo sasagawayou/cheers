@@ -8,6 +8,7 @@
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
   </head>
+  <div align="center">
   <table>
     <thead>
       <tr>
@@ -23,5 +24,6 @@
       <?php }; ?>
     </tbody>
   </table>
+  </div>
 </body>
 </html>

@@ -9,6 +9,7 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <div align="center">
       <table>
         <tr>
           <th><img src="<?php echo 'data:;base64,' . $sf_user->getImageBase64(); ?>" alt="">&nbsp;</th>
@@ -31,5 +32,6 @@
           </td>
         </tr>
       </table>
+    </div>
 </body>
 </html>

@@ -93,3 +93,8 @@ list-style:none;
 margin:14px 0px;
 margin-left:150px;
 }
+
+#map_canvas{
+margin-left:250px;
+margin-bottom:50px;
+}

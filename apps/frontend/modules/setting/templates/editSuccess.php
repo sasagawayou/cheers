@@ -9,6 +9,7 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <div align="center">
     <form action="/frontend_dev.php/setting/edit" method="POST">
       <table>
         <tr>
@@ -33,5 +34,6 @@
         </tr>
       </table>
     </form>
+      </div>
   </body>
 </html>
